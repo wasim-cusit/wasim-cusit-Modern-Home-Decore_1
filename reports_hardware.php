@@ -266,7 +266,7 @@ $total_pages = ceil($total_count / $per_page);
 </head>
 <body>
     <div class="container" style="background:#fff; border-radius:20px; box-shadow:0 8px 32px rgba(0,0,0,0.08); padding:24px; border:1px solid #e8f4fd;">
-        <div class="d-flex align-items-center bg-light rounded shadow-sm p-3 mb-4" style="gap: 14px;">
+        <div class="d-flex align-items-center bg-light rounded shadow-sm pt-2 pb-3 px-3 mb-4" style="gap: 14px;">
             <span class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px; font-size: 2rem;">
                 <i class="fas fa-tools"></i>
             </span>

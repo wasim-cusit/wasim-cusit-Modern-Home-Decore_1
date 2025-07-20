@@ -34,8 +34,8 @@ $result = $conn->query("SELECT * FROM companies ORDER BY id DESC");
 <div class="companies-management">
     <div class="header-section mb-4 d-flex justify-content-between align-items-center">
         <h2><i class="fas fa-building me-2"></i> Manage Companies</h2>
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCompanyModal">
-            <i class="fas fa-plus-circle me-2"></i> Add Company
+        <button class="btn btn-success rounded px-4 py-2 shadow-sm d-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#addCompanyModal">
+            <i class="fas fa-plus-circle"></i> Add Company
         </button>
     </div>
 

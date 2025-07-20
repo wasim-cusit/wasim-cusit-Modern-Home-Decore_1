@@ -268,6 +268,7 @@ if (isset($_GET['quotation_id']) && is_numeric($_GET['quotation_id'])) {
     $items[] = $row;
   }
   $stmt->close();
+  // Use the same print layout as index.php?page=quotation
 ?>
   <!DOCTYPE html>
   <html lang="en">
@@ -276,7 +277,8 @@ if (isset($_GET['quotation_id']) && is_numeric($_GET['quotation_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quotation Report</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <style>
       body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -383,7 +385,7 @@ if (isset($_GET['quotation_id']) && is_numeric($_GET['quotation_id'])) {
 
   <body>
     <div class="quotation-container">
-      <button class="print-btn" onclick="window.print()"><i class="fas fa-print"></i> Print</button>
+      <button class="print-btn btn btn-primary" onclick="window.print()"><i class="fas fa-print"></i> Print</button>
       <div class="quotation-header">
         <img src="../logo/mod.jpg" alt="Company Logo" class="quotation-logo" />
         <div class="quotation-title">MODERN WINDOWS & DOORS</div>
@@ -416,109 +418,17 @@ if (isset($_GET['quotation_id']) && is_numeric($_GET['quotation_id'])) {
           <?php foreach ($items as $i => $item): ?>
             <tr>
               <td><?= $i + 1 ?></td>
-              <td><?= htmlspecialchars($item['description']) ?></td>
-              <td><?= htmlspecialchars($item['unit']) ?></td>
-              <td><?= number_format((float)$item['area'], 2, '.', '') ?></td>
-              <td><?= htmlspecialchars($item['quantity']) ?></td>
-              <td><?= number_format((float)$item['rate_per_sft'], 2, '.', '') ?></td>
-              <td><?= number_format((float)$item['amount'], 2, '.', '') ?></td>
+              <td><?= htmlspecialchars($item['description'] ?? '') ?></td>
+              <td><?= htmlspecialchars($item['unit'] ?? '') ?></td>
+              <td><?= number_format((float)($item['area'] ?? 0), 2, '.', '') ?></td>
+              <td><?= htmlspecialchars($item['quantity'] ?? '') ?></td>
+              <td><?= number_format((float)($item['rate_per_sft'] ?? 0), 2, '.', '') ?></td>
+              <td><?= number_format((float)($item['amount'] ?? 0), 2, '.', '') ?></td>
             </tr>
           <?php endforeach; ?>
         </tbody>
       </table>
       <div class="text-right"><strong>Total: Rs <?= number_format((float)$quotation['total_amount'], 2, '.', '') ?></strong></div>
-      <?php
-      // --- Window Types Images Section ---
-      $windowTypeMap = [
-        '2psl' => ['label' => '2 Panel Sliding', 'img' => '../Pages/image/2psl.png'],
-        '3psl' => ['label' => '3 Panel Sliding', 'img' => '../Pages/image/3psl.png'],
-        'fix' => ['label' => 'Fixed Window', 'img' => '../Pages/image/fix.png'],
-        'halfdoor' => ['label' => 'Half Window', 'img' => '../Pages/image/halfdoor.png'],
-        'fulldoor' => ['label' => 'Full Door', 'img' => '../Pages/image/fulldoor.png'],
-        'openable' => ['label' => 'Openable Window', 'img' => '../Pages/image/openable.png'],
-        'tophung' => ['label' => 'Top Hung', 'img' => '../Pages/image/tophung.png'],
-        'glass' => ['label' => 'Glass Door', 'img' => '../Pages/image/glass.png'],
-      ];
-      if (!empty($quotation['window_types'])) {
-        $types = array_filter(array_map('trim', explode(',', $quotation['window_types'])));
-        if ($types) {
-          echo '<div style="margin: 30px 0; text-align: center;"><h4>Selected Window Types</h4><div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">';
-          foreach ($types as $type) {
-            if (isset($windowTypeMap[$type])) {
-              $info = $windowTypeMap[$type];
-              echo '<div style="display: inline-block; text-align: center; width: 160px;">';
-              echo '<img src="' . $info['img'] . '" alt="' . htmlspecialchars($info['label']) . '" style="max-width: 120px; max-height: 120px; display: block; margin: 0 auto 10px auto; border: 1px solid #bbb; border-radius: 6px;">';
-              echo '<div style="font-weight: bold; margin-top: 8px;">' . htmlspecialchars($info['label']) . '</div>';
-              echo '</div>';
-            }
-          }
-          echo '</div></div>';
-        }
-      }
-      ?>
-      <!-- Detailed Calculation Breakdown Cards -->
-      <div style="margin: 40px 0 20px 0;">
-        <h3 style="text-align:center; margin-bottom: 25px;">Calculation Breakdown</h3>
-        <div style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: center;">
-        <?php
-        foreach ($items as $item) {
-          // Fetch calculation details by calculation_id if available
-          $calc = null;
-          if (!empty($item['calculation_id'])) {
-            $stmt = $conn->prepare("SELECT * FROM window_calculation_details WHERE id = ? LIMIT 1");
-            $stmt->bind_param("i", $item['calculation_id']);
-            $stmt->execute();
-            $calc = $stmt->get_result()->fetch_assoc();
-            $stmt->close();
-          }
-          if ($calc) {
-            echo '<div style="background:#f8f9fa; border-radius:12px; box-shadow:0 2px 8px #0001; padding:24px; min-width:320px; max-width:370px; flex:1;">';
-            echo '<h4 style="margin-bottom:12px; color:#2c3e50;">' . htmlspecialchars($item['description']) . '</h4>';
-            echo '<div style="margin-bottom:10px;"><b>Dimensions:</b> ' . number_format($calc['width'],2, '.', '') . 'ft × ' . number_format($calc['height'],2, '.', '') . 'ft × ' . (int)$calc['quantity'] . '</div>';
-            echo '<div style="margin-bottom:10px;"><b>Total Area:</b> ' . number_format($calc['total_area'],2, '.', '') . ' sft</div>';
-            echo '<table style="width:100%; font-size:14px; margin-bottom:10px;">';
-            echo '<tr><th style="text-align:left;">Item</th><th style="text-align:right;">Qty/Len</th><th style="text-align:right;">Rs</th></tr>';
-            $rows = [
-              ['Frame', $calc['frame_length'], $calc['frame_length_rs']],
-              ['Sash', $calc['sash_length'], $calc['sash_length_rs']],
-              ['Net Sash', $calc['net_sash_length'], $calc['net_sash_length_rs']],
-              ['Beading', $calc['beading_length'], $calc['beading_length_rs']],
-              ['Interlock', $calc['interlock_length'], $calc['interlock_length_rs']],
-              ['Steel', $calc['steel_quantity'], $calc['steel_quantity_rs']],
-              ['Net', $calc['net_area'], $calc['net_area_rs']],
-              ['Net Rubber', $calc['net_rubber_quantity'], $calc['net_rubber_quantity_rs']],
-              ['Burshi', $calc['burshi_length'], $calc['burshi_length_rs']],
-              ['Locks', $calc['locks'], $calc['locks_rs']],
-              ['Dummy', $calc['dummy'], $calc['dummy_rs']],
-              ['Boofer', $calc['boofer'], $calc['boofer_rs']],
-              ['Stopper', $calc['stopper'], $calc['stopper_rs']],
-              ['Double Wheel', $calc['double_wheel'], $calc['double_wheel_rs']],
-              ['Net Wheel', $calc['net_wheel'], $calc['net_wheel_rs']],
-              ['Sada Screw', $calc['sada_screw'], $calc['sada_screw_rs']],
-              ['Fitting Screw', $calc['fitting_screw'], $calc['fitting_screw_rs']],
-              ['Self Screw', $calc['self_screw'], $calc['self_screw_rs']],
-              ['Rawal Plug', $calc['rawal_plug'], $calc['rawal_plug_rs']],
-              ['Silicon White', $calc['silicon_white'], $calc['silicon_white_rs']],
-              ['Hole Caps', $calc['hole_caps'], $calc['hole_caps_rs']],
-              ['Water Caps', $calc['water_caps'], $calc['water_caps_rs']],
-            ];
-            foreach ($rows as [$label, $qty, $rs]) {
-              if ($qty !== null && $qty !== '' && ($rs !== null && $rs !== '')) {
-                echo '<tr><td>' . htmlspecialchars($label) . '</td><td style="text-align:right;">' . htmlspecialchars($qty) . '</td><td style="text-align:right;">' . number_format((float)$rs,2, '.', '') . '</td></tr>';
-              }
-            }
-            echo '<tr style="font-weight:bold;"><td>Total Materials</td><td></td><td style="text-align:right;">' . number_format((float)$calc['material_cost'],2, '.', '') . '</td></tr>';
-            echo '<tr style="font-weight:bold;"><td>Total Hardware</td><td></td><td style="text-align:right;">' . number_format((float)$calc['hardware_cost'],2, '.', '') . '</td></tr>';
-            echo '<tr style="font-weight:bold;"><td>Glass</td><td></td><td style="text-align:right;">' . number_format((float)$calc['glass_cost'],2, '.', '') . '</td></tr>';
-            echo '<tr style="font-weight:bold;"><td>Grand Total</td><td></td><td style="text-align:right; color:#182848;">' . number_format((float)$calc['total_cost'],2, '.', '') . '</td></tr>';
-            echo '</table>';
-            echo '</div>';
-          }
-        }
-        ?>
-        </div>
-      </div>
-      <!-- End Detailed Calculation Breakdown Cards -->
       <div class="terms-conditions">
         <strong>Terms & Conditions:</strong><br>
         <u>Payment Terms:</u><br>
@@ -1029,6 +939,7 @@ if (isset($_GET['quotation_id']) && is_numeric($_GET['quotation_id'])) {
       justify-items: center;
       max-width: 700px;
     }
+
     .window-type-print-modern {
       display: flex;
       flex-direction: column;
@@ -1044,6 +955,7 @@ if (isset($_GET['quotation_id']) && is_numeric($_GET['quotation_id'])) {
       max-width: 220px;
       margin-top: 0;
     }
+
     .window-type-print-modern img {
       max-width: 120px;
       max-height: 120px;
@@ -1053,6 +965,7 @@ if (isset($_GET['quotation_id']) && is_numeric($_GET['quotation_id'])) {
       background: #fff;
       box-shadow: 0 1px 4px #0001;
     }
+
     .window-type-label-modern {
       font-size: 15px;
       font-weight: bold;
@@ -1061,27 +974,31 @@ if (isset($_GET['quotation_id']) && is_numeric($_GET['quotation_id'])) {
       text-align: center;
       letter-spacing: 1px;
     }
+
     @media print {
       body {
         background: #fff !important;
         color: #000 !important;
       }
+
       .print-main-container {
         width: 800px;
         margin: 0 auto;
         background: #fff;
         border: 1px solid #e0e0e0;
-        box-shadow: 0 0 10px rgba(0,0,0,0.07);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
         padding: 40px 32px 32px 32px;
         page-break-after: avoid;
         min-height: 100vh;
       }
+
       .window-types-grid-print-modern {
         max-width: 100% !important;
         gap: 24px 16px !important;
         grid-template-columns: repeat(3, 1fr) !important;
         justify-items: center !important;
       }
+
       .window-type-print-modern {
         width: 180px !important;
         min-height: 210px !important;
@@ -1089,6 +1006,7 @@ if (isset($_GET['quotation_id']) && is_numeric($_GET['quotation_id'])) {
         padding: 14px 10px 10px 10px !important;
         flex: 0 1 calc(33.333% - 16px) !important;
       }
+
       .window-type-print-modern img {
         max-width: 110px !important;
         max-height: 110px !important;
@@ -1360,15 +1278,15 @@ if (isset($_GET['quotation_id']) && is_numeric($_GET['quotation_id'])) {
                       if (!isset($item['window_type'])) continue;
                       $i++;
                   ?>
-                    <tr>
-                      <td><?= $rowOffset + $i ?></td>
-                      <td><span class="print-only">Window: <?= htmlspecialchars($item['window_type']) ?></span></td>
-                      <td><?= htmlspecialchars($item['unit'] ?? 'Sft') ?></td>
-                      <td><?= isset($item['area']) ? number_format($item['area'], 2, '.', '') : '' ?></td>
-                      <td><?= isset($item['quantity']) ? number_format($item['quantity'], 2, '.', '') : '' ?></td>
-                      <td><?= isset($item['rate']) ? number_format($item['rate'], 2, '.', '') : '' ?></td>
-                      <td><?= isset($item['amount']) ? number_format((float)$item['amount'], 2, '.', '') : '' ?></td>
-                    </tr>
+                      <tr>
+                        <td><b><?= $rowOffset + $i ?></b></td>
+                        <td><input type="text" class="form-control form-control-sm no-print" name="items[<?= $rowOffset + $i ?>][window_type]" value="<?= htmlspecialchars($item['window_type']) ?>" required><b><span class="print-only">Window: <?= htmlspecialchars($item['window_type']) ?></span></b></td>
+                        <td><b><?= htmlspecialchars($item['unit'] ?? 'Sft') ?></b></td>
+                        <td><b><?= isset($item['area']) ? number_format($item['area'], 2, '.', '') : '' ?></b></td>
+                        <td><b><?= isset($item['quantity']) ? number_format($item['quantity'], 2, '.', '') : '' ?></b></td>
+                        <td><b><?= isset($item['rate']) ? number_format($item['rate'], 2, '.', '') : '' ?></b></td>
+                        <td><b><?= isset($item['amount']) ? number_format((float)$item['amount'], 2, '.', '') : '' ?></b></td>
+                      </tr>
                   <?php
                     }
                   }
@@ -1376,7 +1294,7 @@ if (isset($_GET['quotation_id']) && is_numeric($_GET['quotation_id'])) {
                 </tbody>
                 <tfoot>
                   <tr class="total-row">
-                    <td colspan="6" class="text-right"><strong>Grand Total</strong></td>
+                    <td colspan="6" class="text-right"><strong>Total Amount (Rs)</strong></td>
                     <td>
                       <span id="quotationTotal"><?= number_format($final_total, 2, '.', '') ?></span>
                     </td>
@@ -1445,14 +1363,14 @@ if (isset($_GET['quotation_id']) && is_numeric($_GET['quotation_id'])) {
                   foreach ($_SESSION['quotation_items'] ?? [] as $item):
                     if (!isset($item['calculation_id'])) continue;
                     $calcCount++;
-                    
+
                     // Fetch calculation details
                     $stmt = $conn->prepare("SELECT * FROM calculation_records WHERE id = ?");
                     $stmt->bind_param("i", $item['calculation_id']);
                     $stmt->execute();
                     $calc = $stmt->get_result()->fetch_assoc();
                     $stmt->close();
-                    
+
                     if ($calc):
                       $calcData = json_decode($calc['calculation_data'], true);
                   ?>
@@ -1497,10 +1415,10 @@ if (isset($_GET['quotation_id']) && is_numeric($_GET['quotation_id'])) {
                         </div>
                       </div>
                     </div>
-                  <?php 
+                  <?php
                     endif;
-                  endforeach; 
-                  
+                  endforeach;
+
                   if ($calcCount === 0): ?>
                     <div class="col-12">
                       <div class="alert alert-info">
@@ -1700,17 +1618,17 @@ General Conditions:
       // Add row functionality
       let rowCount = <?= count($predefined_items) ?>;
       document.getElementById('addRowBtn').addEventListener('click', function() {
+        const predefinedCount = 6; // Number of predefined items
+        const tbody = document.getElementById('quotationItems');
+        const customRows = tbody.querySelectorAll('tr').length - predefinedCount;
+        const serial = predefinedCount + customRows + 1;
         rowCount++;
         const newRow = document.createElement('tr');
         newRow.innerHTML = `
-        <td>${rowCount}</td>
+        <td><b>${serial}</b></td>
+        <td><input type="text" class="form-control form-control-sm no-print" name="items[${serial}][window_type]" value="" required><b><span class="print-only">Window: </span></b></td>
         <td>
-          <input type="text" class="form-control form-control-sm no-print" 
-                name="items[${rowCount}][description]" value="" required>
-          <span class="print-only"></span>
-        </td>
-        <td>
-          <select class="form-select form-select-sm no-print" name="items[${rowCount}][unit]" required>
+          <select class="form-select form-select-sm no-print" name="items[${serial}][unit]" required>
             <option value="Sft">Sft</option>
             <option value="Pcs">Pcs</option>
             <option value="Ls">Ls</option>
@@ -1719,28 +1637,41 @@ General Conditions:
         </td>
         <td>
           <input type="number" class="form-control form-control-sm no-print area-field" 
-                name="items[${rowCount}][area]" step="0.01" value="0.00" required>
+                name="items[${serial}][area]" step="0.01" value="0.00" required>
           <span class="print-only">0.00</span>
         </td>
         <td>
           <input type="number" class="form-control form-control-sm no-print qty-field" 
-                name="items[${rowCount}][quantity]" value="0">
+                name="items[${serial}][quantity]" value="0">
           <span class="print-only">0</span>
         </td>
         <td>
           <input type="number" class="form-control form-control-sm no-print rate-field" 
-                name="items[${rowCount}][rate]" step="0.01" value="0.00" required>
+                name="items[${serial}][rate]" step="0.01" value="0.00" required>
           <span class="print-only">0.00</span>
         </td>
         <td>
           <input type="number" class="form-control form-control-sm no-print amount-field" 
-                name="items[${rowCount}][amount]" readonly value="0.00">
+                name="items[${serial}][amount]" readonly value="0.00">
           <span class="print-only">0.00</span>
         </td>
       `;
-
-        document.getElementById('quotationItems').appendChild(newRow);
+        // Insert the new row after the 6 predefined items (as row 7, 8, ...)
+        const insertIndex = predefinedCount;
+        if (tbody.rows.length > insertIndex) {
+          tbody.insertBefore(newRow, tbody.rows[insertIndex]);
+        } else {
+          tbody.appendChild(newRow);
+        }
         setupRowCalculations(newRow);
+        // Update serial numbers for all custom item rows
+        const rows = tbody.querySelectorAll('tr');
+        for (let i = predefinedCount; i < rows.length; i++) {
+          const serialCell = rows[i].querySelector('td:first-child b');
+          if (serialCell) {
+            serialCell.textContent = i + 1;
+          }
+        }
       });
 
       function setupRowCalculations(row) {

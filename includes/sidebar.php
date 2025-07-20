@@ -1,4 +1,4 @@
-<style>
+ <style>
 .sidebar {
   background: #fff;
   min-height: 100vh;
@@ -115,6 +115,53 @@
   
   .main-content.sidebar-collapsed {
     margin-left: 0 !important;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .sidebar {
+    position: fixed !important;
+    left: -250px;
+    top: 0;
+    width: 250px !important;
+    height: 100vh;
+    z-index: 2000;
+    transition: left 0.3s;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.15);
+  }
+  .sidebar.mobile-open {
+    left: 0 !important;
+  }
+  .sidebar-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.25);
+    z-index: 1999;
+  }
+  .sidebar-backdrop.show {
+    display: block;
+  }
+  .sidebar-toggle-mobile {
+    display: flex !important;
+    position: fixed;
+    top: 18px;
+    left: 18px;
+    z-index: 2100;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    font-size: 20px;
+    color: white;
   }
 }
 
@@ -255,6 +302,12 @@
 }
 </style>
 
+<!-- Mobile Sidebar Toggle Button -->
+<button class="sidebar-toggle-mobile d-none" id="sidebarToggleMobile" aria-label="Open Sidebar">
+  <i class="fas fa-bars"></i>
+</button>
+<div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
 <div class="sidebar p-0" id="sidebar">
   <!-- Logo Section -->
   <div class="sidebar-logo">
@@ -275,6 +328,11 @@
     <a href="?page=quotation" class="sidebar-item <?= $page === 'quotation' ? 'active' : '' ?>" data-title="View Quotation">
       <i class="fas fa-eye sidebar-icon"></i>
       <span class="sidebar-text">View Quotation</span>
+    </a>
+
+    <a href="?page=purchase" class="sidebar-item <?= $page === 'purchase' ? 'active' : '' ?>" data-title="purchase">
+      <i class="fas fa-shopping-cart sidebar-icon"></i>
+      <span class="sidebar-text">Purchase</span>
     </a>
     
     <!-- Reports Expandable -->
@@ -336,12 +394,12 @@
       </a>
       <a class="sidebar-item<?= $page === 'settings_companies' ? ' active' : '' ?>" href="?page=settings_companies" data-title="Companies">
         <i class="fas fa-building sidebar-icon"></i>
-        <span class="sidebar-text">Companies</span>
+        <span class="sidebar-text">Add Companies</span>
       </a>
-      <a class="sidebar-item<?= $page === 'settings_add_company' ? ' active' : '' ?>" href="?page=settings_add_company" data-title="Add Company">
+      <!-- <a class="sidebar-item<?= $page === 'settings_add_company' ? ' active' : '' ?>" href="?page=settings_add_company" data-title="Add Company">
         <i class="fas fa-plus sidebar-icon"></i>
         <span class="sidebar-text">Add Company</span>
-      </a>
+      </a> -->
     </div>
   </div>
 </div>
@@ -537,5 +595,32 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+  // Mobile sidebar toggle
+  const sidebarToggleMobile = document.getElementById('sidebarToggleMobile');
+  const sidebarBackdrop = document.getElementById('sidebarBackdrop');
+  function openSidebarMobile() {
+    sidebar.classList.add('mobile-open');
+    sidebarBackdrop.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeSidebarMobile() {
+    sidebar.classList.remove('mobile-open');
+    sidebarBackdrop.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+  sidebarToggleMobile.addEventListener('click', openSidebarMobile);
+  sidebarBackdrop.addEventListener('click', closeSidebarMobile);
+  // Show toggle button on mobile
+  function handleResize() {
+    if (window.innerWidth <= 991) {
+      sidebarToggleMobile.classList.remove('d-none');
+    } else {
+      sidebarToggleMobile.classList.add('d-none');
+      closeSidebarMobile();
+    }
+  }
+  window.addEventListener('resize', handleResize);
+  handleResize();
 });
 </script>

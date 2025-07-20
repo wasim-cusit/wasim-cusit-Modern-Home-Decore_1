@@ -337,7 +337,7 @@ $stmt->close();
     <div class="header">
         <h1>Client Quotations</h1>
         <div style="display: flex; gap: 10px;">
-            <a href="http://localhost/window/index.php?page=report_quotation" class="btn btn-secondary no-print">
+            <a href="index.php?page=report_quotation" class="btn btn-secondary no-print">
                 <i class="fas fa-arrow-left"></i> Back
             </a>
             <button onclick="window.print()" class="btn no-print">
@@ -403,6 +403,49 @@ $stmt->close();
                     <p><strong>Date:</strong> <?= htmlspecialchars($quotation['date']) ?></p>
                     <p><strong>Total:</strong> Rs <?= number_format($quotation['total_amount'], 2) ?></p>
                 </div>
+            <?php endif; ?>
+
+            <?php
+            // Fetch calculation summary data for this quotation
+            $window_calcs = [];
+            $calc_stmt = $conn->prepare("SELECT window_type, width, height, quantity, total_area, total_cost FROM window_calculation_details WHERE quotation_number = ?");
+            $calc_stmt->bind_param("s", $quotation['quotation_number']);
+            $calc_stmt->execute();
+            $calc_result = $calc_stmt->get_result();
+            while ($row = $calc_result->fetch_assoc()) {
+                $window_calcs[] = $row;
+            }
+            $calc_stmt->close();
+            ?>
+            <?php if (!empty($window_calcs)): ?>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Window Type</th>
+                            <th>Width (ft)</th>
+                            <th>Height (ft)</th>
+                            <th>Area (sq ft)</th>
+                            <th>Quantity</th>
+                            <th>Rate (Rs/sq ft)</th>
+                            <th>Amount (Rs)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($window_calcs as $i => $win): ?>
+                            <tr>
+                                <td><?= $i+1 ?></td>
+                                <td><?= htmlspecialchars($win['window_type']) ?></td>
+                                <td><?= number_format($win['width'], 2) ?></td>
+                                <td><?= number_format($win['height'], 2) ?></td>
+                                <td><?= number_format($win['total_area'], 2) ?></td>
+                                <td><?= number_format($win['quantity'], 2) ?></td>
+                                <td><?= ($win['total_area'] > 0 ? number_format($win['total_cost'] / $win['total_area'], 2) : '0.00') ?></td>
+                                <td><?= number_format($win['total_cost'], 2) ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
             <?php endif; ?>
 
             <?php if (!empty($quotation['window_types'])): ?>

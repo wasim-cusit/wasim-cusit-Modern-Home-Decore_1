@@ -349,7 +349,7 @@ $total_pages = ceil($total_count / $per_page);
 
 <body>
     <div class="container" style="background:#fff; border-radius:20px; box-shadow:0 8px 32px rgba(0,0,0,0.08); padding:24px; border:1px solid #e8f4fd; max-width:1200px; margin:30px auto;">
-        <div class="d-flex align-items-center bg-light rounded shadow-sm p-3 mb-4" style="gap: 12px;">
+        <div class="d-flex align-items-center bg-light rounded shadow-sm pt-2 pb-3 px-3 mb-4" style="gap: 12px;">
             <span class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px; font-size: 2rem;">
                 <i class="fas fa-file-invoice-dollar"></i>
             </span>
@@ -422,7 +422,9 @@ $total_pages = ceil($total_count / $per_page);
                             <td><?= number_format($quote['total_amount'] ?? 0, 2) ?></td>
                             <td><?= date('M d, Y', strtotime($quote['created_at'])) ?></td>
                             <td class="actions">
-                                <a href="index.php?page=reports_invoices&delete=<?= $quote['id'] ?>" class="btn btn-delete" data-id="<?= $quote['id'] ?>" onclick="return confirm('Are you sure you want to delete this quotation?')">Delete</a>
+                                <a href="index.php?page=reports_invoices&delete=<?= $quote['id'] ?>" class="btn btn-danger btn-sm d-inline-flex align-items-center gap-1" data-id="<?= $quote['id'] ?>" onclick="return confirm('Are you sure you want to delete this quotation?')">
+                                    <i class="fas fa-trash-alt"></i> Delete
+                                </a>
                                 <a href="Pages/quotations.php?quotation_id=<?= $quote['id'] ?>" class="btn btn-info" target="_blank" style="margin-left: 5px;">View/Print</a>
                                 <a href="Pages/view_quotation.php?quotation_id=<?= $quote['id'] ?>" class="btn btn-success btn-calc" target="_blank" style="margin-left: 5px;">View Calculation</a>
                             </td>

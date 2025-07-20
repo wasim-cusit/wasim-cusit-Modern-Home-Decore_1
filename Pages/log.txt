@@ -16064,3 +16064,1320 @@ Stack trace:
     [54] => 470694.15
 )
 
+[17-Jul-2025 07:06:10 Europe/Berlin] Received POST data: Array
+(
+    [action] => save_calculation
+    [client_id] => 33
+    [company_id] => 1
+    [window_type] => 3PSL
+    [height] => 32
+    [width] => 32
+    [quantity] => 1
+    [total_area] => 1024
+    [frame_length] => 6.74
+    [sash_length] => 12.13
+    [net_sash_length] => 6.06
+    [beading_length] => 12.13
+    [interlock_length] => 4.04
+    [steel_quantity] => 59.20
+    [net_area] => 682.67
+    [net_rubber_quantity] => 1.44
+    [burshi_length] => 352.00
+    [locks] => 2
+    [dummy] => 2
+    [boofer] => 4
+    [stopper] => 4
+    [double_wheel] => 4
+    [net_wheel] => 4
+    [sada_screw] => 40
+    [fitting_screw] => 30
+    [self_screw] => 70
+    [rawal_plug] => 30
+    [silicon_white] => 2
+    [hole_caps] => 30
+    [water_caps] => 2
+    [frame_cost] => 14080
+    [sash_cost] => 23040
+    [net_sash_cost] => 10368
+    [beading_cost] => 0
+    [interlock_cost] => 5376
+    [steel_cost] => 1184.0000000000002
+    [net_cost] => 0
+    [net_rubber_cost] => 129.6
+    [burshi_cost] => 1760
+    [locks_cost] => 0
+    [dummy_cost] => 0
+    [boofer_cost] => 0
+    [stopper_cost] => 160
+    [double_wheel_cost] => 0
+    [net_wheel_cost] => 40
+    [sada_screw_cost] => 200
+    [fitting_screw_cost] => 150
+    [self_screw_cost] => 350
+    [rawal_plug_cost] => 0
+    [silicon_white_cost] => 0
+    [hole_caps_cost] => 60
+    [water_caps_cost] => 0
+    [material_cost] => 55937.6
+    [hardware_cost] => 960
+    [glass_cost] => 204800
+    [total_cost] => 261697.6
+)
+
+[17-Jul-2025 07:06:10 Europe/Berlin] Number of parameters: 55
+[17-Jul-2025 07:06:10 Europe/Berlin] Type string length: 55
+[17-Jul-2025 07:06:10 Europe/Berlin] Type string: iisddddddddddiiiiiiiiidiiiiiddddddddddddddddddddddddddd
+[17-Jul-2025 07:06:10 Europe/Berlin] Parameters: Array
+(
+    [0] => 33
+    [1] => 1
+    [2] => 3PSL
+    [3] => 32
+    [4] => 32
+    [5] => 1
+    [6] => 1024
+    [7] => 6.74
+    [8] => 12.13
+    [9] => 6.06
+    [10] => 12.13
+    [11] => 4.04
+    [12] => 59.2
+    [13] => 682.67
+    [14] => 1.44
+    [15] => 352
+    [16] => 2
+    [17] => 2
+    [18] => 4
+    [19] => 4
+    [20] => 4
+    [21] => 4
+    [22] => 40
+    [23] => 30
+    [24] => 70
+    [25] => 30
+    [26] => 2
+    [27] => 30
+    [28] => 2
+    [29] => 14080
+    [30] => 23040
+    [31] => 10368
+    [32] => 0
+    [33] => 5376
+    [34] => 1184
+    [35] => 0
+    [36] => 129.6
+    [37] => 1760
+    [38] => 0
+    [39] => 0
+    [40] => 0
+    [41] => 160
+    [42] => 0
+    [43] => 40
+    [44] => 200
+    [45] => 150
+    [46] => 350
+    [47] => 0
+    [48] => 0
+    [49] => 60
+    [50] => 0
+    [51] => 55937.6
+    [52] => 960
+    [53] => 204800
+    [54] => 261697.6
+)
+
+[17-Jul-2025 11:17:58 Europe/Berlin] Received POST data: Array
+(
+    [action] => save_calculation
+    [client_id] => 33
+    [company_id] => 1
+    [window_type] => Half-Door
+    [height] => 32
+    [width] => 32
+    [quantity] => 1
+    [total_area] => 1024
+    [frame_length] => 5.05
+    [sash_length] => 6.74
+    [mullion_length] => 1.68
+    [beading_length] => 10.11
+    [steel_quantity] => 32.00
+    [fitting_screw] => 15
+    [rawal_plug] => 15
+    [silicon] => 2
+    [self_screw] => 40
+    [sada_screw] => 30
+    [hinges] => 4
+    [locks] => 1
+    [material_cost] => 18880
+    [hardware_cost] => 425
+    [glass_cost] => 204800
+    [total_cost] => 224105
+    [frame_cost] => 10560
+    [sash_cost] => 7680
+    [mullion_cost] => 0
+    [beading_cost] => 0
+    [steel_cost] => 640
+    [fitting_screw_cost] => 75
+    [rawal_plug_cost] => 0
+    [silicon_cost] => 0
+    [self_screw_cost] => 200
+    [sada_screw_cost] => 150
+    [hinges_cost] => 0
+    [locks_cost] => 0
+)
+
+[17-Jul-2025 11:17:58 Europe/Berlin] Number of parameters: 55
+[17-Jul-2025 11:17:58 Europe/Berlin] Type string length: 55
+[17-Jul-2025 11:17:58 Europe/Berlin] Type string: iisddddddddddiiiiiiiiidiiiiiddddddddddddddddddddddddddd
+[17-Jul-2025 11:17:58 Europe/Berlin] Parameters: Array
+(
+    [0] => 33
+    [1] => 1
+    [2] => Half-Door
+    [3] => 32
+    [4] => 32
+    [5] => 1
+    [6] => 1024
+    [7] => 5.05
+    [8] => 6.74
+    [9] => 0
+    [10] => 10.11
+    [11] => 0
+    [12] => 32
+    [13] => 0
+    [14] => 0
+    [15] => 0
+    [16] => 1
+    [17] => 0
+    [18] => 0
+    [19] => 0
+    [20] => 0
+    [21] => 0
+    [22] => 30
+    [23] => 15
+    [24] => 40
+    [25] => 15
+    [26] => 0
+    [27] => 0
+    [28] => 0
+    [29] => 10560
+    [30] => 7680
+    [31] => 0
+    [32] => 0
+    [33] => 0
+    [34] => 640
+    [35] => 0
+    [36] => 0
+    [37] => 0
+    [38] => 0
+    [39] => 0
+    [40] => 0
+    [41] => 0
+    [42] => 0
+    [43] => 0
+    [44] => 150
+    [45] => 75
+    [46] => 200
+    [47] => 0
+    [48] => 0
+    [49] => 0
+    [50] => 0
+    [51] => 18880
+    [52] => 425
+    [53] => 204800
+    [54] => 224105
+)
+
+[17-Jul-2025 12:10:03 Europe/Berlin] Received POST data: Array
+(
+    [action] => save_calculation
+    [client_id] => 33
+    [company_id] => 1
+    [window_type] => 3PSL
+    [height] => 32
+    [width] => 32
+    [quantity] => 1
+    [total_area] => 1024
+    [frame_length] => 6.74
+    [sash_length] => 12.13
+    [net_sash_length] => 6.06
+    [beading_length] => 12.13
+    [interlock_length] => 4.04
+    [steel_quantity] => 59.20
+    [net_area] => 682.67
+    [net_rubber_quantity] => 1.44
+    [burshi_length] => 352.00
+    [locks] => 2
+    [dummy] => 2
+    [boofer] => 4
+    [stopper] => 4
+    [double_wheel] => 4
+    [net_wheel] => 4
+    [sada_screw] => 40
+    [fitting_screw] => 30
+    [self_screw] => 70
+    [rawal_plug] => 30
+    [silicon_white] => 2
+    [hole_caps] => 30
+    [water_caps] => 2
+    [frame_cost] => 14080
+    [sash_cost] => 23040
+    [net_sash_cost] => 10368
+    [beading_cost] => 0
+    [interlock_cost] => 5376
+    [steel_cost] => 1184.0000000000002
+    [net_cost] => 0
+    [net_rubber_cost] => 129.6
+    [burshi_cost] => 0
+    [locks_cost] => 0
+    [dummy_cost] => 0
+    [boofer_cost] => 0
+    [stopper_cost] => 160
+    [double_wheel_cost] => 0
+    [net_wheel_cost] => 40
+    [sada_screw_cost] => 200
+    [fitting_screw_cost] => 150
+    [self_screw_cost] => 350
+    [rawal_plug_cost] => 0
+    [silicon_white_cost] => 0
+    [hole_caps_cost] => 60
+    [water_caps_cost] => 0
+    [material_cost] => 54177.6
+    [hardware_cost] => 960
+    [glass_cost] => 204800
+    [total_cost] => 259937.6
+)
+
+[17-Jul-2025 12:10:03 Europe/Berlin] Number of parameters: 55
+[17-Jul-2025 12:10:03 Europe/Berlin] Type string length: 55
+[17-Jul-2025 12:10:03 Europe/Berlin] Type string: iisddddddddddiiiiiiiiidiiiiiddddddddddddddddddddddddddd
+[17-Jul-2025 12:10:03 Europe/Berlin] Parameters: Array
+(
+    [0] => 33
+    [1] => 1
+    [2] => 3PSL
+    [3] => 32
+    [4] => 32
+    [5] => 1
+    [6] => 1024
+    [7] => 6.74
+    [8] => 12.13
+    [9] => 6.06
+    [10] => 12.13
+    [11] => 4.04
+    [12] => 59.2
+    [13] => 682.67
+    [14] => 1.44
+    [15] => 352
+    [16] => 2
+    [17] => 2
+    [18] => 4
+    [19] => 4
+    [20] => 4
+    [21] => 4
+    [22] => 40
+    [23] => 30
+    [24] => 70
+    [25] => 30
+    [26] => 2
+    [27] => 30
+    [28] => 2
+    [29] => 14080
+    [30] => 23040
+    [31] => 10368
+    [32] => 0
+    [33] => 5376
+    [34] => 1184
+    [35] => 0
+    [36] => 129.6
+    [37] => 0
+    [38] => 0
+    [39] => 0
+    [40] => 0
+    [41] => 160
+    [42] => 0
+    [43] => 40
+    [44] => 200
+    [45] => 150
+    [46] => 350
+    [47] => 0
+    [48] => 0
+    [49] => 60
+    [50] => 0
+    [51] => 54177.6
+    [52] => 960
+    [53] => 204800
+    [54] => 259937.6
+)
+
+[17-Jul-2025 13:24:30 Europe/Berlin] Received POST data: Array
+(
+    [action] => save_calculation
+    [client_id] => 33
+    [company_id] => 1
+    [window_type] => Top Hung
+    [height] => 32
+    [width] => 32
+    [quantity] => 1
+    [total_area] => 1024
+    [frame_length] => 6.74
+    [sash_length] => 6.74
+    [beading_length] => 6.74
+    [steel_quantity] => 38.00
+    [fitting_screw] => 10
+    [rawal_plug] => 10
+    [self_screw] => 18
+    [sada_screw] => 15
+    [silicon_white] => 1
+    [locks] => 1
+    [friction_hinges] => 2
+    [material_cost] => 32960
+    [hardware_cost] => 215
+    [glass_cost] => 204800
+    [total_cost] => 237975
+    [frame_cost] => 14080
+    [sash_cost] => 12800
+    [beading_cost] => 0
+    [steel_cost] => 6080
+    [fitting_screw_cost] => 50
+    [rawal_plug_cost] => 0
+    [self_screw_cost] => 90
+    [sada_screw_cost] => 75
+    [silicon] => 1
+    [silicon_cost] => 0
+    [lock] => 1
+    [lock_cost] => 0
+    [friction_hinges_cost] => 0
+)
+
+[17-Jul-2025 13:24:30 Europe/Berlin] Number of parameters: 55
+[17-Jul-2025 13:24:30 Europe/Berlin] Type string length: 55
+[17-Jul-2025 13:24:30 Europe/Berlin] Type string: iisddddddddddiiiiiiiiidiiiiiddddddddddddddddddddddddddd
+[17-Jul-2025 13:24:30 Europe/Berlin] Parameters: Array
+(
+    [0] => 33
+    [1] => 1
+    [2] => Top Hung
+    [3] => 32
+    [4] => 32
+    [5] => 1
+    [6] => 1024
+    [7] => 6.74
+    [8] => 6.74
+    [9] => 0
+    [10] => 6.74
+    [11] => 0
+    [12] => 38
+    [13] => 0
+    [14] => 0
+    [15] => 0
+    [16] => 1
+    [17] => 0
+    [18] => 0
+    [19] => 0
+    [20] => 0
+    [21] => 0
+    [22] => 15
+    [23] => 10
+    [24] => 18
+    [25] => 10
+    [26] => 1
+    [27] => 0
+    [28] => 0
+    [29] => 14080
+    [30] => 12800
+    [31] => 0
+    [32] => 0
+    [33] => 0
+    [34] => 6080
+    [35] => 0
+    [36] => 0
+    [37] => 0
+    [38] => 0
+    [39] => 0
+    [40] => 0
+    [41] => 0
+    [42] => 0
+    [43] => 0
+    [44] => 75
+    [45] => 50
+    [46] => 90
+    [47] => 0
+    [48] => 0
+    [49] => 0
+    [50] => 0
+    [51] => 32960
+    [52] => 215
+    [53] => 204800
+    [54] => 237975
+)
+
+[17-Jul-2025 13:59:56 Europe/Berlin] Received POST data: Array
+(
+    [action] => save_calculation
+    [client_id] => 33
+    [company_id] => 1
+    [window_type] => 3PSL
+    [height] => 32
+    [width] => 32
+    [quantity] => 1
+    [total_area] => 1024
+    [frame_length] => 6.74
+    [sash_length] => 12.13
+    [net_sash_length] => 6.06
+    [beading_length] => 12.13
+    [interlock_length] => 4.04
+    [steel_quantity] => 59.20
+    [net_area] => 682.67
+    [net_rubber_quantity] => 1.44
+    [burshi_length] => 352.00
+    [locks] => 2
+    [dummy] => 2
+    [boofer] => 4
+    [stopper] => 4
+    [double_wheel] => 4
+    [net_wheel] => 4
+    [sada_screw] => 40
+    [fitting_screw] => 30
+    [self_screw] => 70
+    [rawal_plug] => 30
+    [silicon_white] => 2
+    [hole_caps] => 30
+    [water_caps] => 2
+    [frame_cost] => 14080
+    [sash_cost] => 23040
+    [net_sash_cost] => 10368
+    [beading_cost] => 0
+    [interlock_cost] => 5376
+    [steel_cost] => 1184.0000000000002
+    [net_cost] => 0
+    [net_rubber_cost] => 129.6
+    [burshi_cost] => 0
+    [locks_cost] => 0
+    [dummy_cost] => 0
+    [boofer_cost] => 0
+    [stopper_cost] => 160
+    [double_wheel_cost] => 0
+    [net_wheel_cost] => 40
+    [sada_screw_cost] => 200
+    [fitting_screw_cost] => 150
+    [self_screw_cost] => 350
+    [rawal_plug_cost] => 0
+    [silicon_white_cost] => 0
+    [hole_caps_cost] => 60
+    [water_caps_cost] => 0
+    [material_cost] => 54177.6
+    [hardware_cost] => 960
+    [glass_cost] => 204800
+    [total_cost] => 259937.6
+)
+
+[17-Jul-2025 13:59:56 Europe/Berlin] Number of parameters: 55
+[17-Jul-2025 13:59:56 Europe/Berlin] Type string length: 55
+[17-Jul-2025 13:59:56 Europe/Berlin] Type string: iisddddddddddiiiiiiiiidiiiiiddddddddddddddddddddddddddd
+[17-Jul-2025 13:59:56 Europe/Berlin] Parameters: Array
+(
+    [0] => 33
+    [1] => 1
+    [2] => 3PSL
+    [3] => 32
+    [4] => 32
+    [5] => 1
+    [6] => 1024
+    [7] => 6.74
+    [8] => 12.13
+    [9] => 6.06
+    [10] => 12.13
+    [11] => 4.04
+    [12] => 59.2
+    [13] => 682.67
+    [14] => 1.44
+    [15] => 352
+    [16] => 2
+    [17] => 2
+    [18] => 4
+    [19] => 4
+    [20] => 4
+    [21] => 4
+    [22] => 40
+    [23] => 30
+    [24] => 70
+    [25] => 30
+    [26] => 2
+    [27] => 30
+    [28] => 2
+    [29] => 14080
+    [30] => 23040
+    [31] => 10368
+    [32] => 0
+    [33] => 5376
+    [34] => 1184
+    [35] => 0
+    [36] => 129.6
+    [37] => 0
+    [38] => 0
+    [39] => 0
+    [40] => 0
+    [41] => 160
+    [42] => 0
+    [43] => 40
+    [44] => 200
+    [45] => 150
+    [46] => 350
+    [47] => 0
+    [48] => 0
+    [49] => 60
+    [50] => 0
+    [51] => 54177.6
+    [52] => 960
+    [53] => 204800
+    [54] => 259937.6
+)
+
+[18-Jul-2025 07:41:32 Europe/Berlin] Received POST data: Array
+(
+    [action] => save_calculation
+    [client_id] => 33
+    [company_id] => 1
+    [window_type] => Door
+    [height] => 32
+    [width] => 32
+    [quantity] => 1
+    [total_area] => 1024
+    [frame_length] => 5.05
+    [sash_length] => 6.74
+    [beading_length] => 6.74
+    [panel_length] => 161.68
+    [steel_quantity] => 28.00
+    [glass_area] => 512.00
+    [material_cost] => 172400
+    [hardware_cost] => 425
+    [glass_cost] => 102400
+    [total_cost] => 275225
+    [frame_cost] => 10560
+    [sash_cost] => 7680
+    [beading_cost] => 0
+    [panel_cost] => 153600
+    [steel_cost] => 560
+    [fitting_screw] => 15
+    [fitting_screw_cost] => 75
+    [rawal_plug] => 15
+    [rawal_plug_cost] => 0
+    [silicon_white] => 2
+    [silicon_white_cost] => 0
+    [self_screw] => 40
+    [self_screw_cost] => 200
+    [sada_screw] => 30
+    [sada_screw_cost] => 150
+    [hinges] => 4
+    [hinges_cost] => 0
+    [locks] => 1
+    [locks_cost] => 0
+)
+
+[18-Jul-2025 07:41:32 Europe/Berlin] Number of parameters: 55
+[18-Jul-2025 07:41:32 Europe/Berlin] Type string length: 55
+[18-Jul-2025 07:41:32 Europe/Berlin] Type string: iisddddddddddiiiiiiiiidiiiiiddddddddddddddddddddddddddd
+[18-Jul-2025 07:41:32 Europe/Berlin] Parameters: Array
+(
+    [0] => 33
+    [1] => 1
+    [2] => Door
+    [3] => 32
+    [4] => 32
+    [5] => 1
+    [6] => 1024
+    [7] => 5.05
+    [8] => 6.74
+    [9] => 0
+    [10] => 6.74
+    [11] => 0
+    [12] => 28
+    [13] => 0
+    [14] => 0
+    [15] => 0
+    [16] => 1
+    [17] => 0
+    [18] => 0
+    [19] => 0
+    [20] => 0
+    [21] => 0
+    [22] => 30
+    [23] => 15
+    [24] => 40
+    [25] => 15
+    [26] => 2
+    [27] => 0
+    [28] => 0
+    [29] => 10560
+    [30] => 7680
+    [31] => 0
+    [32] => 0
+    [33] => 0
+    [34] => 560
+    [35] => 0
+    [36] => 0
+    [37] => 0
+    [38] => 0
+    [39] => 0
+    [40] => 0
+    [41] => 0
+    [42] => 0
+    [43] => 0
+    [44] => 150
+    [45] => 75
+    [46] => 200
+    [47] => 0
+    [48] => 0
+    [49] => 0
+    [50] => 0
+    [51] => 172400
+    [52] => 425
+    [53] => 102400
+    [54] => 275225
+)
+
+[18-Jul-2025 08:04:59 Europe/Berlin] Received POST data: Array
+(
+    [action] => save_calculation
+    [client_id] => 33
+    [company_id] => 1
+    [window_type] => Fix Window
+    [height] => 45
+    [width] => 56
+    [quantity] => 1
+    [total_area] => 2520
+    [frame_length] => 10.63
+    [beading_length] => 10.63
+    [steel_quantity] => 25.25
+    [self_screw] => 20
+    [fitting_screw] => 15
+    [hole_caps] => 15
+    [rawal_plug] => 15
+    [material_cost] => 22725
+    [hardware_cost] => 205
+    [glass_cost] => 504000
+    [total_cost] => 526930
+    [frame_cost] => 22220
+    [beading_cost] => 0
+    [steel_cost] => 505
+    [self_screw_cost] => 100
+    [fitting_screw_cost] => 75
+    [hole_caps_cost] => 30
+    [rawal_plug_cost] => 0
+)
+
+[18-Jul-2025 08:04:59 Europe/Berlin] Number of parameters: 55
+[18-Jul-2025 08:04:59 Europe/Berlin] Type string length: 55
+[18-Jul-2025 08:04:59 Europe/Berlin] Type string: iisddddddddddiiiiiiiiidiiiiiddddddddddddddddddddddddddd
+[18-Jul-2025 08:04:59 Europe/Berlin] Parameters: Array
+(
+    [0] => 33
+    [1] => 1
+    [2] => Fix Window
+    [3] => 45
+    [4] => 56
+    [5] => 1
+    [6] => 2520
+    [7] => 10.63
+    [8] => 0
+    [9] => 0
+    [10] => 10.63
+    [11] => 0
+    [12] => 25.25
+    [13] => 0
+    [14] => 0
+    [15] => 0
+    [16] => 0
+    [17] => 0
+    [18] => 0
+    [19] => 0
+    [20] => 0
+    [21] => 0
+    [22] => 0
+    [23] => 15
+    [24] => 20
+    [25] => 15
+    [26] => 0
+    [27] => 15
+    [28] => 0
+    [29] => 22220
+    [30] => 0
+    [31] => 0
+    [32] => 0
+    [33] => 0
+    [34] => 505
+    [35] => 0
+    [36] => 0
+    [37] => 0
+    [38] => 0
+    [39] => 0
+    [40] => 0
+    [41] => 0
+    [42] => 0
+    [43] => 0
+    [44] => 0
+    [45] => 75
+    [46] => 100
+    [47] => 0
+    [48] => 0
+    [49] => 30
+    [50] => 0
+    [51] => 22725
+    [52] => 205
+    [53] => 504000
+    [54] => 526930
+)
+
+[18-Jul-2025 08:05:26 Europe/Berlin] Received POST data: Array
+(
+    [action] => save_calculation
+    [client_id] => 33
+    [company_id] => 1
+    [window_type] => Top Hung
+    [height] => 32
+    [width] => 32
+    [quantity] => 1
+    [total_area] => 1024
+    [frame_length] => 6.74
+    [sash_length] => 6.74
+    [beading_length] => 6.74
+    [steel_quantity] => 38.00
+    [fitting_screw] => 10
+    [rawal_plug] => 10
+    [self_screw] => 18
+    [sada_screw] => 15
+    [silicon_white] => 1
+    [locks] => 1
+    [friction_hinges] => 2
+    [material_cost] => 32960
+    [hardware_cost] => 215
+    [glass_cost] => 204800
+    [total_cost] => 237975
+    [frame_cost] => 14080
+    [sash_cost] => 12800
+    [beading_cost] => 0
+    [steel_cost] => 6080
+    [fitting_screw_cost] => 50
+    [rawal_plug_cost] => 0
+    [self_screw_cost] => 90
+    [sada_screw_cost] => 75
+    [silicon] => 1
+    [silicon_cost] => 0
+    [lock] => 1
+    [lock_cost] => 0
+    [friction_hinges_cost] => 0
+)
+
+[18-Jul-2025 08:05:26 Europe/Berlin] Number of parameters: 55
+[18-Jul-2025 08:05:26 Europe/Berlin] Type string length: 55
+[18-Jul-2025 08:05:26 Europe/Berlin] Type string: iisddddddddddiiiiiiiiidiiiiiddddddddddddddddddddddddddd
+[18-Jul-2025 08:05:26 Europe/Berlin] Parameters: Array
+(
+    [0] => 33
+    [1] => 1
+    [2] => Top Hung
+    [3] => 32
+    [4] => 32
+    [5] => 1
+    [6] => 1024
+    [7] => 6.74
+    [8] => 6.74
+    [9] => 0
+    [10] => 6.74
+    [11] => 0
+    [12] => 38
+    [13] => 0
+    [14] => 0
+    [15] => 0
+    [16] => 1
+    [17] => 0
+    [18] => 0
+    [19] => 0
+    [20] => 0
+    [21] => 0
+    [22] => 15
+    [23] => 10
+    [24] => 18
+    [25] => 10
+    [26] => 1
+    [27] => 0
+    [28] => 0
+    [29] => 14080
+    [30] => 12800
+    [31] => 0
+    [32] => 0
+    [33] => 0
+    [34] => 6080
+    [35] => 0
+    [36] => 0
+    [37] => 0
+    [38] => 0
+    [39] => 0
+    [40] => 0
+    [41] => 0
+    [42] => 0
+    [43] => 0
+    [44] => 75
+    [45] => 50
+    [46] => 90
+    [47] => 0
+    [48] => 0
+    [49] => 0
+    [50] => 0
+    [51] => 32960
+    [52] => 215
+    [53] => 204800
+    [54] => 237975
+)
+
+[18-Jul-2025 08:29:58 Europe/Berlin] Received POST data: Array
+(
+    [action] => save_calculation
+    [client_id] => 33
+    [company_id] => 1
+    [window_type] => Door
+    [height] => 32
+    [width] => 32
+    [quantity] => 1
+    [total_area] => 1024
+    [frame_length] => 5.05
+    [sash_length] => 6.74
+    [beading_length] => 6.74
+    [panel_length] => 161.68
+    [steel_quantity] => 28.00
+    [glass_area] => 512.00
+    [material_cost] => 172400
+    [hardware_cost] => 425
+    [glass_cost] => 102400
+    [total_cost] => 275225
+    [frame_cost] => 10560
+    [sash_cost] => 7680
+    [beading_cost] => 0
+    [panel_cost] => 153600
+    [steel_cost] => 560
+    [fitting_screw] => 15
+    [fitting_screw_cost] => 75
+    [rawal_plug] => 15
+    [rawal_plug_cost] => 0
+    [silicon_white] => 2
+    [silicon_white_cost] => 0
+    [self_screw] => 40
+    [self_screw_cost] => 200
+    [sada_screw] => 30
+    [sada_screw_cost] => 150
+    [hinges] => 4
+    [hinges_cost] => 0
+    [locks] => 1
+    [locks_cost] => 0
+)
+
+[18-Jul-2025 08:29:58 Europe/Berlin] Number of parameters: 55
+[18-Jul-2025 08:29:58 Europe/Berlin] Type string length: 55
+[18-Jul-2025 08:29:58 Europe/Berlin] Type string: iisddddddddddiiiiiiiiidiiiiiddddddddddddddddddddddddddd
+[18-Jul-2025 08:29:58 Europe/Berlin] Parameters: Array
+(
+    [0] => 33
+    [1] => 1
+    [2] => Door
+    [3] => 32
+    [4] => 32
+    [5] => 1
+    [6] => 1024
+    [7] => 5.05
+    [8] => 6.74
+    [9] => 0
+    [10] => 6.74
+    [11] => 0
+    [12] => 28
+    [13] => 0
+    [14] => 0
+    [15] => 0
+    [16] => 1
+    [17] => 0
+    [18] => 0
+    [19] => 0
+    [20] => 0
+    [21] => 0
+    [22] => 30
+    [23] => 15
+    [24] => 40
+    [25] => 15
+    [26] => 2
+    [27] => 0
+    [28] => 0
+    [29] => 10560
+    [30] => 7680
+    [31] => 0
+    [32] => 0
+    [33] => 0
+    [34] => 560
+    [35] => 0
+    [36] => 0
+    [37] => 0
+    [38] => 0
+    [39] => 0
+    [40] => 0
+    [41] => 0
+    [42] => 0
+    [43] => 0
+    [44] => 150
+    [45] => 75
+    [46] => 200
+    [47] => 0
+    [48] => 0
+    [49] => 0
+    [50] => 0
+    [51] => 172400
+    [52] => 425
+    [53] => 102400
+    [54] => 275225
+)
+
+[18-Jul-2025 08:30:18 Europe/Berlin] Received POST data: Array
+(
+    [action] => save_calculation
+    [client_id] => 33
+    [company_id] => 1
+    [window_type] => 3PSL
+    [height] => 22
+    [width] => 32
+    [quantity] => 1
+    [total_area] => 704
+    [frame_length] => 5.68
+    [sash_length] => 10.23
+    [net_sash_length] => 5.12
+    [beading_length] => 10.23
+    [interlock_length] => 3.41
+    [steel_quantity] => 49.95
+    [net_area] => 469.33
+    [net_rubber_quantity] => 1.22
+    [burshi_length] => 282.00
+    [locks] => 2
+    [dummy] => 2
+    [boofer] => 4
+    [stopper] => 4
+    [double_wheel] => 4
+    [net_wheel] => 4
+    [sada_screw] => 40
+    [fitting_screw] => 30
+    [self_screw] => 70
+    [rawal_plug] => 30
+    [silicon_white] => 2
+    [hole_caps] => 30
+    [water_caps] => 2
+    [frame_cost] => 11880
+    [sash_cost] => 19440
+    [net_sash_cost] => 8748
+    [beading_cost] => 0
+    [interlock_cost] => 4536
+    [steel_cost] => 998.9999999999999
+    [net_cost] => 0
+    [net_rubber_cost] => 109.35000000000001
+    [burshi_cost] => 0
+    [locks_cost] => 0
+    [dummy_cost] => 0
+    [boofer_cost] => 0
+    [stopper_cost] => 160
+    [double_wheel_cost] => 0
+    [net_wheel_cost] => 40
+    [sada_screw_cost] => 200
+    [fitting_screw_cost] => 150
+    [self_screw_cost] => 350
+    [rawal_plug_cost] => 0
+    [silicon_white_cost] => 0
+    [hole_caps_cost] => 60
+    [water_caps_cost] => 0
+    [material_cost] => 45712.35
+    [hardware_cost] => 960
+    [glass_cost] => 140800
+    [total_cost] => 187472.35
+)
+
+[18-Jul-2025 08:30:18 Europe/Berlin] Number of parameters: 55
+[18-Jul-2025 08:30:18 Europe/Berlin] Type string length: 55
+[18-Jul-2025 08:30:18 Europe/Berlin] Type string: iisddddddddddiiiiiiiiidiiiiiddddddddddddddddddddddddddd
+[18-Jul-2025 08:30:18 Europe/Berlin] Parameters: Array
+(
+    [0] => 33
+    [1] => 1
+    [2] => 3PSL
+    [3] => 22
+    [4] => 32
+    [5] => 1
+    [6] => 704
+    [7] => 5.68
+    [8] => 10.23
+    [9] => 5.12
+    [10] => 10.23
+    [11] => 3.41
+    [12] => 49.95
+    [13] => 469.33
+    [14] => 1.22
+    [15] => 282
+    [16] => 2
+    [17] => 2
+    [18] => 4
+    [19] => 4
+    [20] => 4
+    [21] => 4
+    [22] => 40
+    [23] => 30
+    [24] => 70
+    [25] => 30
+    [26] => 2
+    [27] => 30
+    [28] => 2
+    [29] => 11880
+    [30] => 19440
+    [31] => 8748
+    [32] => 0
+    [33] => 4536
+    [34] => 999
+    [35] => 0
+    [36] => 109.35
+    [37] => 0
+    [38] => 0
+    [39] => 0
+    [40] => 0
+    [41] => 160
+    [42] => 0
+    [43] => 40
+    [44] => 200
+    [45] => 150
+    [46] => 350
+    [47] => 0
+    [48] => 0
+    [49] => 60
+    [50] => 0
+    [51] => 45712.35
+    [52] => 960
+    [53] => 140800
+    [54] => 187472.35
+)
+
+[20-Jul-2025 12:43:43 Europe/Berlin] Received POST data: Array
+(
+    [action] => save_calculation
+    [client_id] => 33
+    [company_id] => 1
+    [window_type] => 3PSL
+    [height] => 34
+    [width] => 43
+    [quantity] => 1
+    [total_area] => 1462
+    [frame_length] => 8.11
+    [sash_length] => 14.59
+    [net_sash_length] => 7.29
+    [beading_length] => 14.59
+    [interlock_length] => 4.86
+    [steel_quantity] => 71.22
+    [net_area] => 974.67
+    [net_rubber_quantity] => 1.73
+    [burshi_length] => 410.00
+    [locks] => 2
+    [dummy] => 2
+    [boofer] => 4
+    [stopper] => 4
+    [double_wheel] => 4
+    [net_wheel] => 4
+    [sada_screw] => 40
+    [fitting_screw] => 30
+    [self_screw] => 70
+    [rawal_plug] => 30
+    [silicon_white] => 2
+    [hole_caps] => 30
+    [water_caps] => 2
+    [frame_cost] => 16940
+    [sash_cost] => 27720
+    [net_sash_cost] => 12474
+    [beading_cost] => 0
+    [interlock_cost] => 6468
+    [steel_cost] => 1424.5
+    [net_cost] => 0
+    [net_rubber_cost] => 155.92499999999998
+    [burshi_cost] => 0
+    [locks_cost] => 0
+    [dummy_cost] => 0
+    [boofer_cost] => 0
+    [stopper_cost] => 160
+    [double_wheel_cost] => 0
+    [net_wheel_cost] => 40
+    [sada_screw_cost] => 200
+    [fitting_screw_cost] => 150
+    [self_screw_cost] => 350
+    [rawal_plug_cost] => 0
+    [silicon_white_cost] => 0
+    [hole_caps_cost] => 60
+    [water_caps_cost] => 0
+    [material_cost] => 65182.425
+    [hardware_cost] => 960
+    [glass_cost] => 292400
+    [total_cost] => 358542.425
+)
+
+[20-Jul-2025 12:43:43 Europe/Berlin] Number of parameters: 55
+[20-Jul-2025 12:43:43 Europe/Berlin] Type string length: 55
+[20-Jul-2025 12:43:43 Europe/Berlin] Type string: iisddddddddddiiiiiiiiidiiiiiddddddddddddddddddddddddddd
+[20-Jul-2025 12:43:43 Europe/Berlin] Parameters: Array
+(
+    [0] => 33
+    [1] => 1
+    [2] => 3PSL
+    [3] => 34
+    [4] => 43
+    [5] => 1
+    [6] => 1462
+    [7] => 8.11
+    [8] => 14.59
+    [9] => 7.29
+    [10] => 14.59
+    [11] => 4.86
+    [12] => 71.22
+    [13] => 974.67
+    [14] => 1.73
+    [15] => 410
+    [16] => 2
+    [17] => 2
+    [18] => 4
+    [19] => 4
+    [20] => 4
+    [21] => 4
+    [22] => 40
+    [23] => 30
+    [24] => 70
+    [25] => 30
+    [26] => 2
+    [27] => 30
+    [28] => 2
+    [29] => 16940
+    [30] => 27720
+    [31] => 12474
+    [32] => 0
+    [33] => 6468
+    [34] => 1424.5
+    [35] => 0
+    [36] => 155.925
+    [37] => 0
+    [38] => 0
+    [39] => 0
+    [40] => 0
+    [41] => 160
+    [42] => 0
+    [43] => 40
+    [44] => 200
+    [45] => 150
+    [46] => 350
+    [47] => 0
+    [48] => 0
+    [49] => 60
+    [50] => 0
+    [51] => 65182.425
+    [52] => 960
+    [53] => 292400
+    [54] => 358542.425
+)
+
+[20-Jul-2025 16:12:41 Europe/Berlin] Received POST data: Array
+(
+    [action] => save_calculation
+    [client_id] => 33
+    [company_id] => 1
+    [window_type] => Door
+    [height] => 32
+    [width] => 32
+    [quantity] => 1
+    [total_area] => 1024
+    [frame_length] => 5.05
+    [sash_length] => 6.74
+    [beading_length] => 6.74
+    [panel_length] => 161.68
+    [steel_quantity] => 28.00
+    [glass_area] => 512.00
+    [material_cost] => 172400
+    [hardware_cost] => 425
+    [glass_cost] => 102400
+    [total_cost] => 275225
+    [frame_cost] => 10560
+    [sash_cost] => 7680
+    [beading_cost] => 0
+    [panel_cost] => 153600
+    [steel_cost] => 560
+    [fitting_screw] => 15
+    [fitting_screw_cost] => 75
+    [rawal_plug] => 15
+    [rawal_plug_cost] => 0
+    [silicon_white] => 2
+    [silicon_white_cost] => 0
+    [self_screw] => 40
+    [self_screw_cost] => 200
+    [sada_screw] => 30
+    [sada_screw_cost] => 150
+    [hinges] => 4
+    [hinges_cost] => 0
+    [locks] => 1
+    [locks_cost] => 0
+)
+
+[20-Jul-2025 16:12:41 Europe/Berlin] Number of parameters: 55
+[20-Jul-2025 16:12:41 Europe/Berlin] Type string length: 55
+[20-Jul-2025 16:12:41 Europe/Berlin] Type string: iisddddddddddiiiiiiiiidiiiiiddddddddddddddddddddddddddd
+[20-Jul-2025 16:12:41 Europe/Berlin] Parameters: Array
+(
+    [0] => 33
+    [1] => 1
+    [2] => Door
+    [3] => 32
+    [4] => 32
+    [5] => 1
+    [6] => 1024
+    [7] => 5.05
+    [8] => 6.74
+    [9] => 0
+    [10] => 6.74
+    [11] => 0
+    [12] => 28
+    [13] => 0
+    [14] => 0
+    [15] => 0
+    [16] => 1
+    [17] => 0
+    [18] => 0
+    [19] => 0
+    [20] => 0
+    [21] => 0
+    [22] => 30
+    [23] => 15
+    [24] => 40
+    [25] => 15
+    [26] => 2
+    [27] => 0
+    [28] => 0
+    [29] => 10560
+    [30] => 7680
+    [31] => 0
+    [32] => 0
+    [33] => 0
+    [34] => 560
+    [35] => 0
+    [36] => 0
+    [37] => 0
+    [38] => 0
+    [39] => 0
+    [40] => 0
+    [41] => 0
+    [42] => 0
+    [43] => 0
+    [44] => 150
+    [45] => 75
+    [46] => 200
+    [47] => 0
+    [48] => 0
+    [49] => 0
+    [50] => 0
+    [51] => 172400
+    [52] => 425
+    [53] => 102400
+    [54] => 275225
+)
+

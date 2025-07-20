@@ -75,7 +75,7 @@ if (isset($_GET['edit'])) {
     table {
         border-collapse: collapse;
         width: 100%;
-        margin-top: 20px;
+        /* margin-top: 20px; */
     }
 
     th,
@@ -106,8 +106,9 @@ if (isset($_GET['edit'])) {
 
 
     .form-container {
-        margin: 20px 0;
+        margin: 20px 0 0 0;
         padding: 15px;
+        /* padding-bottom:  7px; */
         background: #f2f2f2;
         border-radius: 4px;
         max-width: 100%;
@@ -213,77 +214,135 @@ if (isset($_GET['edit'])) {
             gap: 10px;
         }
     }
+    .search-bar-materials {
+        background: #f8f9fa;
+        border-radius: 1rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        padding: 0;
+        margin: 0;
+        max-width: 400px;
+        display: flex;
+        align-items: center;
+    }
+    .search-bar-materials .form-control {
+        border-radius: 2rem 0 0 2rem;
+        border-right: 0;
+        background: #fff;
+    }
+    .search-bar-materials .btn {
+        border-radius: 0 2rem 2rem 0;
+    }
 </style>
 
 <div class="container">
-    <h2><i class="fas fa-cogs me-2"></i>Materials Settings</h2>
+<div class="d-flex align-items-center mb-4 gap-3">
+        <h2 class="mb-0"><i class="fas fa-boxes me-2"></i>Materials Settings</h2>
+    </div>
+    <div class="d-flex align-items-center justify-content-between mb-4 gap-3">
+        <div class="company-selector mb-0 d-flex align-items-center gap-2">
+            <label for="company-select" class="mb-0">Select Company:</label>
+            <select id="company-select" class="form-select" style="width:auto; min-width:180px;" onchange="window.location.href='?page=settings_materials&company_id=' + this.value">
+                <?php while ($company = $companies->fetch_assoc()): ?>
+                    <option value="<?= $company['id'] ?>" <?= $company['id'] == $selected_company_id ? 'selected' : '' ?>>
+                        <?= htmlspecialchars($company['name']) ?>
+                    </option>
+                <?php endwhile; ?>
+            </select>
+        </div>
+      
+    </div>
 
     <?php if (isset($success)): ?>
         <div class="alert alert-success"><?= $success ?></div>
     <?php endif; ?>
 
-    <!-- Company Selector -->
-    <div class="company-selector">
-        <label for="company-select">Select Company:</label>
-        <select id="company-select" onchange="window.location.href='?page=settings_materials&company_id=' + this.value">
-            <?php while ($company = $companies->fetch_assoc()): ?>
-                <option value="<?= $company['id'] ?>" <?= $company['id'] == $selected_company_id ? 'selected' : '' ?>>
-                    <?= htmlspecialchars($company['name']) ?>
-                </option>
-            <?php endwhile; ?>
-        </select>
-    </div>
-
     <!-- Add/Edit Form -->
     <div class="form-container">
         <h3><?= $edit_material ? 'Edit Material' : 'Add New Material' ?></h3>
-        <form method="POST" class="professional-form">
+        <form method="POST" class="row g-3 align-items-end flex-wrap">
             <?php if ($edit_material): ?>
                 <input type="hidden" name="edit_id" value="<?= $edit_material['id'] ?>">
             <?php endif; ?>
             
             <input type="hidden" name="company_id" value="<?= $selected_company_id ?>">
             
-            <div class="form-group-grouped">
-                <div class="form-group">
-                    <label for="name">Material Name:</label>
-                    <input type="text" id="name" name="name" value="<?= $edit_material ? htmlspecialchars($edit_material['name']) : '' ?>" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="length">Length (ft):</label>
-                    <input type="number" id="length" name="length" step="0.01" value="<?= $edit_material ? $edit_material['length'] : '' ?>" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="price_per_foot">Price per Foot:</label>
-                    <input type="number" id="price_per_foot" name="price_per_foot" step="0.01" value="<?= $edit_material ? $edit_material['price_per_foot'] : '' ?>" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="bundle_quantity">Bundle Quantity:</label>
-                    <input type="number" id="bundle_quantity" name="bundle_quantity" value="<?= $edit_material ? $edit_material['bundle_quantity'] : '' ?>" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="bundle_price">Bundle Price:</label>
-                    <input type="number" id="bundle_price" name="bundle_price" step="0.01" value="<?= $edit_material ? $edit_material['bundle_price'] : '' ?>" required>
-                </div>
+            <div class="col-md-2">
+                <label for="name" class="form-label">Material Name:</label>
+                <input type="text" id="name" name="name" class="form-control" value="<?= $edit_material ? htmlspecialchars($edit_material['name']) : '' ?>" required>
+            </div>
+            <div class="col-md-2">
+                <label for="length" class="form-label">Length (ft):</label>
+                <input type="number" id="length" name="length" class="form-control" step="0.01" value="<?= $edit_material ? $edit_material['length'] : '' ?>" required>
+            </div>
+            <div class="col-md-2">
+                <label for="price_per_foot" class="form-label">Price per Foot:</label>
+                <input type="number" id="price_per_foot" name="price_per_foot" class="form-control" step="0.01" value="<?= $edit_material ? $edit_material['price_per_foot'] : '' ?>" required>
+            </div>
+            <div class="col-md-2">
+                <label for="bundle_quantity" class="form-label">Bundle Quantity:</label>
+                <input type="number" id="bundle_quantity" name="bundle_quantity" class="form-control" value="<?= $edit_material ? $edit_material['bundle_quantity'] : '' ?>" required>
+            </div>
+            <div class="col-md-2">
+                <label for="bundle_price" class="form-label">Bundle Price:</label>
+                <input type="number" id="bundle_price" name="bundle_price" class="form-control" step="0.01" value="<?= $edit_material ? $edit_material['bundle_price'] : '' ?>" required>
             </div>
             
-            <div class="action-buttons">
-                <button type="submit" class="btn btn-submit">
-                    <i class="fas fa-save me-1"></i><?= $edit_material ? 'Update Material' : 'Add Material' ?>
+            <div class="col-md-auto d-flex align-items-end gap-2">
+                <button type="submit" class="btn btn-success d-flex align-items-center" style="gap:6px;">
+                    <i class="fas fa-save"></i> <?= $edit_material ? 'Update Material' : 'Add Material' ?>
                 </button>
                 <?php if ($edit_material): ?>
-                    <a href="?page=settings_materials&company_id=<?= $selected_company_id ?>" class="btn btn-cancel">
-                        <i class="fas fa-times me-1"></i>Cancel
+                    <a href="?page=settings_materials&company_id=<?= $selected_company_id ?>" class="btn btn-secondary d-flex align-items-center" style="gap:6px;">
+                        <i class="fas fa-times"></i> Cancel
                     </a>
                 <?php endif; ?>
             </div>
         </form>
     </div>
 
+    <!-- Search Box -->
+    <style>
+    .search-bar-materials {
+        background: #f8f9fa;
+        border-radius: 1rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        padding: 0.75rem 0.25rem;
+        /* margin-bottom: 1.5rem; */
+        max-width: 400px;
+        display: flex;
+        align-items: center;
+    }
+    .search-bar-materials .form-control {
+        border-radius: 2rem 0 0 2rem;
+        border-right: 0;
+        background: #fff;
+    }
+    .search-bar-materials .btn {
+        border-radius: 0 2rem 2rem 0;
+    }
+    </style>
+    <div class="search-bar-materials">
+        <form method="get" class="d-flex w-100" style="gap: 0;" id="materialsSearchForm" autocomplete="off">
+            <input type="hidden" name="page" value="settings_materials">
+            <input type="text" class="form-control" name="search" id="materialsSearchInput" placeholder="Search materials..." value="<?= isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '' ?>">
+            <button class="btn btn-primary px-4" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var searchInput = document.getElementById('materialsSearchInput');
+        let debounceTimer;
+        searchInput.addEventListener('input', function() {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(function() {
+                const params = new URLSearchParams(window.location.search);
+                params.set('page', 'settings_materials');
+                params.set('search', searchInput.value);
+                window.location.search = params.toString();
+            }, 350);
+        });
+    });
+    </script>
     <!-- Materials Table -->
     <table>
         <thead>
@@ -297,7 +356,12 @@ if (isset($_GET['edit'])) {
             </tr>
         </thead>
         <tbody>
-            <?php while ($material = $materials->fetch_assoc()): ?>
+            <?php
+            // Filter materials if search is set
+            $search = isset($_GET['search']) ? strtolower(trim($_GET['search'])) : '';
+            while ($material = $materials->fetch_assoc()):
+                if ($search && strpos(strtolower($material['name']), $search) === false) continue;
+            ?>
                 <tr>
                     <td><?= htmlspecialchars($material['name']) ?></td>
                     <td><?= $material['length'] ?></td>
@@ -305,11 +369,72 @@ if (isset($_GET['edit'])) {
                     <td><?= $material['bundle_quantity'] ?></td>
                     <td>Rs <?= number_format($material['bundle_price'] ?? 0, 2) ?></td>
                     <td>
-                        <a href="?page=settings_materials&company_id=<?= $selected_company_id ?>&edit=<?= $material['id'] ?>" class="btn btn-edit">Edit</a>
-                        <a href="?page=settings_materials&company_id=<?= $selected_company_id ?>&delete=<?= $material['id'] ?>" class="btn btn-delete" onclick="return confirm('Are you sure you want to delete this material?')">Delete</a>
+                        <button type="button" class="btn btn-warning btn-sm me-1 d-inline-flex align-items-center" style="gap:4px;" data-bs-toggle="modal" data-bs-target="#editMaterialModal" data-id="<?= $material['id'] ?>" data-name="<?= htmlspecialchars($material['name']) ?>" data-length="<?= $material['length'] ?>" data-price_per_foot="<?= $material['price_per_foot'] ?>" data-bundle_quantity="<?= $material['bundle_quantity'] ?>" data-bundle_price="<?= $material['bundle_price'] ?>">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <a href="?page=settings_materials&company_id=<?= $selected_company_id ?>&delete=<?= $material['id'] ?>" class="btn btn-danger btn-sm d-inline-flex align-items-center" style="gap:4px;" onclick="return confirm('Are you sure you want to delete this material?')"><i class="fas fa-trash"></i> Delete</a>
                     </td>
                 </tr>
             <?php endwhile; ?>
         </tbody>
     </table>
+
+    <!-- Edit Material Modal -->
+    <div class="modal fade" id="editMaterialModal" tabindex="-1" aria-labelledby="editMaterialModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form method="POST">
+            <div class="modal-header">
+              <h5 class="modal-title" id="editMaterialModalLabel">Edit Material</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body row g-3">
+              <input type="hidden" name="edit_id" id="edit_id_modal">
+              <input type="hidden" name="company_id" value="<?= $selected_company_id ?>">
+              <div class="col-12">
+                <label for="edit_name_modal" class="form-label">Material Name:</label>
+                <input type="text" id="edit_name_modal" name="name" class="form-control" required>
+              </div>
+              <div class="col-6">
+                <label for="edit_length_modal" class="form-label">Length (ft):</label>
+                <input type="number" id="edit_length_modal" name="length" class="form-control" step="0.01" required>
+              </div>
+              <div class="col-6">
+                <label for="edit_price_per_foot_modal" class="form-label">Price per Foot:</label>
+                <input type="number" id="edit_price_per_foot_modal" name="price_per_foot" class="form-control" step="0.01" required>
+              </div>
+              <div class="col-6">
+                <label for="edit_bundle_quantity_modal" class="form-label">Bundle Quantity:</label>
+                <input type="number" id="edit_bundle_quantity_modal" name="bundle_quantity" class="form-control" required>
+              </div>
+              <div class="col-6">
+                <label for="edit_bundle_price_modal" class="form-label">Bundle Price:</label>
+                <input type="number" id="edit_bundle_price_modal" name="bundle_price" class="form-control" step="0.01" required>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Update Material</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var editModal = document.getElementById('editMaterialModal');
+      if (editModal) {
+        editModal.addEventListener('show.bs.modal', function (event) {
+          var button = event.relatedTarget;
+          document.getElementById('edit_id_modal').value = button.getAttribute('data-id');
+          document.getElementById('edit_name_modal').value = button.getAttribute('data-name');
+          document.getElementById('edit_length_modal').value = button.getAttribute('data-length');
+          document.getElementById('edit_price_per_foot_modal').value = button.getAttribute('data-price_per_foot');
+          document.getElementById('edit_bundle_quantity_modal').value = button.getAttribute('data-bundle_quantity');
+          document.getElementById('edit_bundle_price_modal').value = button.getAttribute('data-bundle_price');
+        });
+      }
+    });
+    </script>
 </div>

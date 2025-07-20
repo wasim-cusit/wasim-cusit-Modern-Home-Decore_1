@@ -265,6 +265,10 @@ $page = $_GET['page'] ?? 'welcome';
       <div class="p-4">
         <?php define('ALLOW_INCLUDE', true); include 'Pages/openable_door.php'; ?>
       </div>
+    <?php elseif ($page === 'purchase'): ?>
+      <div class="p-4">
+        <?php define('ALLOW_INCLUDE', true); include 'purchase.php'; ?>
+      </div>
     <?php elseif ($page === 'logout'): ?>
       <?php session_destroy(); header("Location: login.php"); exit(); ?>
     <?php else: ?>
